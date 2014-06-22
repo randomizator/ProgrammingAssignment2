@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Matrix derived object that can hold a cached inverse for calculation speed up
 
-## Write a short comment describing this function
+## Create and returns the CacheMatrix object from a R matrix. 
+## No calculation is performed at this stage
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -18,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Returns the inverse of a CacheMatrix object.
+## If the inverse has been calculated before, return the cached inverse, else compute and store it in the object
 
 cacheSolve <- function(x, ...) {
   i <- x$getinv()
